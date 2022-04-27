@@ -57,6 +57,10 @@ p {
   padding: 0;
   list-style: none;
 }
+input {
+  outline: none;
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -729,8 +733,10 @@ body {
   fill: var(--accent-text-color-black);
   position: absolute;
   transform: translate(-50%, -50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-modal-btn:focus .close-icon {
+.close-modal-btn:focus .close-icon,
+.close-modal-btn:hover .close-icon {
   fill: var(--accent-text-color-blue);
 }
 
@@ -742,8 +748,7 @@ body {
 .modal-title {
   display: block;
   text-align: left;
-  font-family: Roboto;
-  font-weight: 700 bold;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   color: var(--primary-text-color);
@@ -786,6 +791,7 @@ body {
   border: 2px solid var(--accent-text-color-blue);
   border-radius: 2px;
   margin-right: 7px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-checkbox:checked + .checkicon-wrap {
   background-color: var(--accent-text-color-blue);
@@ -802,10 +808,12 @@ body {
   padding-left: 41px;
   padding-bottom: 11px;
   border-radius: 2px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-icon {
   position: absolute;
   transform: translate(100%, 160%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-decor::placeholder {
   font-size: 16px;
@@ -816,7 +824,6 @@ body {
 }
 .input-decor:focus,
 .input-decor:hover {
-  outline: none;
   border: 1px solid var(--accent-text-color-blue);
 }
 
@@ -836,7 +843,6 @@ body {
   opacity: 0.5;
 }
 .form-textarea:focus {
-  outline: none;
   border: 1px solid var(--accent-text-color-blue);
 }
 .checkbox:checked + .checkicon-wrap {
@@ -854,9 +860,7 @@ body {
   color: var(--accent-text-color-blue);
   text-underline-position: under;
 }
-/* padding-top: 40px;
-	padding-left: 41px;
-	padding-right: 39px; */
+
 .submit {
   width: 200px;
   height: 50px;
@@ -894,6 +898,7 @@ body {
   padding-left: 16px;
   padding-bottom: 15px;
   padding-top: 15px;
+  color: var(--white-text-color);
 }
 .footer-submit {
   position: relative;
